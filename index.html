@@ -1,0 +1,96 @@
+<html>
+<head>
+  <title>How Do I Declare A Block in Objective-C?</title>
+  <style>
+    body {
+      background-color: #042029;
+      color: #83948F;
+      font-family: Lucida Grande, sans-serif;
+      font-size: 20px;
+      padding: 0 40px;
+    }
+
+    strong {
+      color: #0088D9;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 1.5em;
+      text-align: center;
+    }
+
+    h2 {
+      font-weight: normal;
+    }
+
+    .return {
+      color: #00A69A;
+    }
+
+    .name {
+      color: #BC8800;
+    }
+
+    .parameter-types, .parameters {
+      color: #7C9F00;
+    }
+
+    code {
+      display: block;
+      font-family: Monaco, Menlo;
+      font-size: 20px;
+      margin-bottom: 3em;
+      margin-left: 40px;
+      margin-top: 1.5em;
+    }
+
+    footer {
+      font-size: 12px;
+      margin-top: 200px;
+      opacity: 0.4;
+      text-align: right;
+    }
+
+    footer a {
+      color: #0088D9;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>How Do I Declare A Block in Objective-C?</h1>
+
+  <div>
+    <h2>As an <strong>instance variable</strong>:</h2>
+    <code>
+      <span class='return'>returnType</span> (^<span class='name'>blockName</span>)(<span class='parameter-types'>parameterTypes</span>) = ^<span class='return'>returnType</span>(<span class='parameters'>parameters</span>) {...};
+    </code>
+  </div>
+
+  <div>
+    <h2>As a <strong>property</strong>:</h2>
+    <code>
+      @property (nonatomic, copy) <span class='return'>returnType</span> (^<span class='name'>blockName</span>)(<span class='parameter-types'>parameterTypes</span>);
+    </code>
+  </div>
+
+  <div>
+    <h2>As a <strong>method parameter</strong>:</h2>
+    <code>
+      - (void)someMethodThatTakesABlock:(<span class='return'>returnType</span> (^)(<span class='parameter-types'>parameterTypes</span>))<span class='name'>blockName</span> {...}
+    </code>
+  </div>
+
+  <div>
+    <h2>As a <strong>typedef</strong>:</h2>
+    <code>
+      typedef <span class='return'>returnType</span> (^<span class='name'>TypeName</span>)(<span class='parameter-types'>parameterTypes</span>);<br/>
+      <span class='name'>TypeName</span> blockName = ^(<span class='parameters'>parameters</span>) {...}
+    </code>
+  </div>
+
+  <footer>By <a href="http://lazerwalker.com">Mike Walker</a>, who has a very bad memory for this sort of thing.
+</body>
