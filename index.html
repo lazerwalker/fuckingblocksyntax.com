@@ -81,7 +81,14 @@
   <div>
     <h2>As a <strong>method parameter</strong>:</h2>
     <code>
-      - (void)someMethodThatTakesABlock:(<span class='return'>returnType</span> (^)(<span class='parameter-types'>parameterTypes</span>))<span class='name'>blockName</span> {...}
+      - (void)someMethodThatTakesABlock:(<span class='return'>returnType</span> (^)(<span class='parameter-types'>parameterTypes</span>))<span class='name'>blockName</span> {...};
+    </code>
+  </div>
+
+  <div>
+    <h2>As an <strong>argument to a method call</strong>:</h2>
+    <code>
+      [someObject someMethodThatTakesABlock: ^<span class='return'>returnType</span> (<span class='parameters'>parameters</span>) {...}];
     </code>
   </div>
 
@@ -89,8 +96,34 @@
     <h2>As a <strong>typedef</strong>:</h2>
     <code>
       typedef <span class='return'>returnType</span> (^<span class='name'>TypeName</span>)(<span class='parameter-types'>parameterTypes</span>);<br/>
-      <span class='name'>TypeName</span> blockName = ^(<span class='parameters'>parameters</span>) {...}
+      <span class='name'>TypeName</span> blockName = ^(<span class='parameters'>parameters</span>) {...};
     </code>
+  </div>
+  <div>
+
+  <h2>As an <strong>anonymous block</strong>:</h2>
+    <code>
+      ^<span class='return'>returnType</span>(<span class='parameters'>parameters</span>) {...};
+    </code>
+  </div>
+
+  <h2>As an <strong>immediately-executed anonymous block</strong>:</h2>
+    <code>
+      ^<span class='return'>returnType</span>(<span class='parameters'>parameters</span>) {...}(<span class='parameters'>arguments</span>);
+    </code>
+  </div>
+
+  <div>
+    <h2>As a <strong>recursive instance variable</strong> (avoids retain cycles in ARC):</h2>
+    <code> __block <span class='return'>returnType</span> (^<span class='name'>blockName</span>)(<span class='parameter-types'>parameterTypes</span>) = [^<span class='return'>returnType</span> (<span class='parameter-types'>parameters</span>) {<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;if (returnCondition) {<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='name'>blockName</span> = nil;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;// ...<br/>
+} copy];<br/><br/>
+<span class='name'>blockName</span>(<span class='parameters'>arguments</span>);
+    <code>
   </div>
 
   <footer>By <a href="http://lazerwalker.com">Mike Walker</a>, who has a very bad memory for this sort of thing.</footer>
