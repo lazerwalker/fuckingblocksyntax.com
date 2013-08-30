@@ -1,4 +1,6 @@
-objc-block-syntax
+Fucking Block Syntax
 =================
 
-Syntax is hard.
+Because syntax is hard.
+
+http://fuckingblocksyntax.com
