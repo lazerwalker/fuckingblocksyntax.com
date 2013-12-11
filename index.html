@@ -105,7 +105,7 @@
   <div>
     <h2>As a <strong>method parameter</strong>:</h2>
     <code>
-      - (void)someMethodThatTakesABlock:(<span class='return'>returnType</span> (^)(<span class='parameter-types'>parameterTypes</span>))<span class='name'>blockName</span> {...}
+      - (void)someMethodThatTakesABlock:(<span class='return'>returnType</span> (^)(<span class='parameter-types'>parameterTypes</span>))<span class='name'>blockName</span>;
     </code>
   </div>
 
@@ -113,6 +113,20 @@
     <h2>As an <strong>argument to a method call</strong>:</h2>
     <code>
       [someObject someMethodThatTakesABlock: ^<span class='return'>returnType</span> (<span class='parameters'>parameters</span>) {...}];
+    </code>
+  </div>
+
+  <div>
+    <h2>As a <strong>function parameter</strong>:</h2>
+    <code>
+      void someFunctionThatTakesABlock(<span class='return'>returnType</span> (^<span class='name'>blockName</span>)(<span class='parameter-types'>parameterTypes</span>));
+    </code>
+  </div>
+
+  <div>
+    <h2>As an <strong>argument to a function call</strong>:</h2>
+    <code>
+      someFunctionThatTakesABlock(^<span class='return'>returnType</span> (<span class='parameters'>parameters</span>) {...});
     </code>
   </div>
 
