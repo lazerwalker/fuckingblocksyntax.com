@@ -65,7 +65,7 @@
 
   </style>
 
-  <style media='print'>
+  <style media="print">
     body {
       background-color: #FFFFFF;
       font-size: 16px;
@@ -110,40 +110,40 @@
   <div>
     <h2>As a <strong>local variable</strong>:</h2>
     <code>
-      <span class='return'>returnType</span> (^<span class='name'>blockName</span>)(<span class='parameter-types'>parameterTypes</span>) = ^<span class='return'>returnType</span>(<span class='parameters'>parameters</span>) {...};
+      <span class="return">returnType</span> (^<span class="name">blockName</span>)(<span class="parameter-types">parameterTypes</span>) = ^<span class="return">returnType</span>(<span class="parameters">parameters</span>) {...};
     </code>
   </div>
 
   <div>
     <h2>As a <strong>property</strong>:</h2>
     <code>
-      @property (nonatomic, copy) <span class='return'>returnType</span> (^<span class='name'>blockName</span>)(<span class='parameter-types'>parameterTypes</span>);
+      @property (nonatomic, copy) <span class="return">returnType</span> (^<span class="name">blockName</span>)(<span class="parameter-types">parameterTypes</span>);
     </code>
   </div>
 
   <div>
     <h2>As a <strong>method parameter</strong>:</h2>
     <code>
-      - (void)someMethodThatTakesABlock:(<span class='return'>returnType</span> (^)(<span class='parameter-types'>parameterTypes</span>))<span class='name'>blockName</span>;
+      - (void)someMethodThatTakesABlock:(<span class="return">returnType</span> (^)(<span class="parameter-types">parameterTypes</span>))<span class="name">blockName</span>;
     </code>
   </div>
 
   <div>
     <h2>As an <strong>argument to a method call</strong>:</h2>
     <code>
-      [someObject someMethodThatTakesABlock:^<span class='return'>returnType</span> (<span class='parameters'>parameters</span>) {...}];
+      [someObject someMethodThatTakesABlock:^<span class="return">returnType</span> (<span class="parameters">parameters</span>) {...}];
     </code>
   </div>
 
   <div>
     <h2>As a <strong>typedef</strong>:</h2>
     <code>
-      typedef <span class='return'>returnType</span> (^<span class='name'>TypeName</span>)(<span class='parameter-types'>parameterTypes</span>);<br/>
-      <span class='name'>TypeName</span> blockName = ^<span class='return'>returnType</span>(<span class='parameters'>parameters</span>) {...};
+      typedef <span class="return">returnType</span> (^<span class="name">TypeName</span>)(<span class="parameter-types">parameterTypes</span>);<br/>
+      <span class="name">TypeName</span> blockName = ^<span class="return">returnType</span>(<span class="parameters">parameters</span>) {...};
     </code>
   </div>
 
-  <div class='disclaimer'>This site is not intended to be an exhaustive list of all possible uses of blocks.</br>
+  <div class="disclaimer">This site is not intended to be an exhaustive list of all possible uses of blocks.</br>
     If you find yourself needing syntax not listed here, it is likely that a <strong>typedef</strong> would make your code more readable.
 
   </br></br>
