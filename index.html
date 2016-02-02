@@ -37,6 +37,10 @@
     .parameter-types, .parameters {
       color: #7C9F00;
     }
+    
+    .nullability {
+      color: #EC407A;
+    }
 
     .disclaimer {
       line-height: 2em;
@@ -117,14 +121,14 @@
   <div>
     <h2>As a <strong>property</strong>:</h2>
     <code>
-      @property (nonatomic, copy) <span class="return">returnType</span> (^<span class="name">blockName</span>)(<span class="parameter-types">parameterTypes</span>);
+      @property (nonatomic, copy, <span class="nullability">nullability</span>) <span class="return">returnType</span> (^<span class="name">blockName</span>)(<span class="parameter-types">parameterTypes</span>);
     </code>
   </div>
 
   <div>
     <h2>As a <strong>method parameter</strong>:</h2>
     <code>
-      - (void)someMethodThatTakesABlock:(<span class="return">returnType</span> (^)(<span class="parameter-types">parameterTypes</span>))<span class="name">blockName</span>;
+      - (void)someMethodThatTakesABlock:(<span class="return">returnType</span> (^<span class="nullability">nullability</span>)(<span class="parameter-types">parameterTypes</span>))<span class="name">blockName</span>;
     </code>
   </div>
 
